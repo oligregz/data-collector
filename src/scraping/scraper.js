@@ -1,4 +1,5 @@
 const puppeteer = require('puppeteer');
+const { listNotebooks } = require('../scraping/services/index');
 
 const extractDataFromPage = async (page) => {
   await page.waitForSelector('.col-md-4.col-xl-4.col-lg-4');
@@ -34,15 +35,18 @@ const searchAndListDetails = async () => {
 
   const extractedData = await extractDataFromPage(page);
 
-  console.log('Detalhes de cada div:');
-  extractedData.forEach((data, index) => {
-    console.log(`Div ${index + 1}:`);
-    console.log('Nome:', data.title);
-    console.log('Descrição:', data.description);
-    console.log('Preço:', data.price);
-    console.log('-------------------------');
-  });
+  // console.log('Detalhes de cada div:');
+  // extractedData.forEach((data, index) => {
+  //   console.log(`Div ${index + 1}:`);
+  //   console.log('Nome:', data.title);
+  //   console.log('Descrição:', data.description);
+  //   console.log('Preço:', data.price);
+  //   console.log('-------------------------');
+  // });
 
+  const list = await listNotebooks();
+  console.log(list);
+  
   await browser.close();
 };
 

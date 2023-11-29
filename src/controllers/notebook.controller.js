@@ -12,6 +12,10 @@ module.exports = {
         return res.status(200).json(notebooks);
       }
 
+      return res.status(406).json({
+        message: `Notebooks not found`
+      });
+
     } catch (e) {
       console.error(e);
       return res.staus(400).json({ error: e.parent.sqlMessage });
