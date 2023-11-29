@@ -2,9 +2,9 @@ const express = require('express');
 
 const routes = express.Router();
 
-routes.get('/', (req, res) => {
-  return res.json({ res: 'Hello World!' });
-});
+const NotebookController = require('./controllers/notebook.controller');
+
+routes.post('/notebook', NotebookController.store);
 
 module.exports = {
   routes

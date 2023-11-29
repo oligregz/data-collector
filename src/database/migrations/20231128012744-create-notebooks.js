@@ -6,9 +6,9 @@ module.exports = {
   async up (queryInterface, Sequelize) {
     return queryInterface.createTable('notebooks', {
       id: {
-        type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4,
+        type: DataTypes.BIGINT,
         primaryKey: true,
+        autoIncrement: true,
         allowNull: false,
       },
       name: {
