@@ -3,17 +3,24 @@ const getBrand = (notebookName) => {
   return brand;
 }
 
+const validateBrand = (title) => {
+  const brand = getBrand(title);
+  if(brand != 'Lenovo') {
+    return false;
+  }
+
+  return true;
+}
 
 const refactNotebookData = async (notebooks) => {
   notebooks.forEach((data) => {
-
-    const marca = getBrand(data.title);
-
-    console.log('Nome:', data.title);
-    console.log('Descrição:', data.description);
-    console.log('Preço:', data.price);
-    console.log(`Marca: ${marca}`);
-    console.log('-------------------------');
+    const isLenovo = validateBrand(data.title);
+    if (isLenovo) {
+      console.log('Nome:', data.title);
+      console.log('Descrição:', data.description);
+      console.log('Preço:', data.price);
+      console.log('-------------------------');
+    }
   });
 
 }
