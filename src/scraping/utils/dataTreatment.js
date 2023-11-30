@@ -12,12 +12,20 @@ const validateBrand = (title) => {
   return true;
 }
 
+const changePriceForNumber = (stringPrice) => {
+  const onlyStringprice = stringPrice.slice(1);
+  const numberPrice = parseFloat(onlyStringprice).toFixed(2);
+
+  console.log(`________${numberPrice}________`);
+}
+
 const refactNotebookData = async (notebooks) => {
   const filteredNotebooks = notebooks
     .filter((data) => {
       return validateBrand(data.title);
     })
     .map((data) => {
+      changePriceForNumber(data.price)
       return {
         name: data.title,
         price: data.price,
