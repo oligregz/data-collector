@@ -13,17 +13,21 @@ const validateBrand = (title) => {
 }
 
 const refactNotebookData = async (notebooks) => {
-  notebooks.forEach((data) => {
-    const isLenovo = validateBrand(data.title);
-    if (isLenovo) {
-      console.log('Nome:', data.title);
-      console.log('Descrição:', data.description);
-      console.log('Preço:', data.price);
-      console.log('-------------------------');
-    }
-  });
+  const filteredNotebooks = notebooks
+    .filter((data) => {
+      return validateBrand(data.title);
+    })
+    .map((data) => {
+      return {
+        name: data.title,
+        price: data.price,
+        description: data.description,
+      };
+    });
 
-}
+  return filteredNotebooks;
+};
+
 
 module.exports = {
   refactNotebookData

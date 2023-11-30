@@ -39,7 +39,8 @@ const searchAndListDetails = async () => {
 
     const extractedData = await extractDataFromPage(page);
     
-    refactNotebookData(extractedData)
+    const ntbks = await refactNotebookData(extractedData);
+    console.log(ntbks);
 
     await browser.close();
 
