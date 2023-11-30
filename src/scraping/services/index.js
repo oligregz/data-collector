@@ -7,7 +7,6 @@ const createNotebook = async (notebook) => {
   try {
     const res = await axios.post(url, notebook);
     
-    console.log(res.data);
     return res.data;
 
   } catch (e) {

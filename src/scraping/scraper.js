@@ -1,5 +1,5 @@
 const puppeteer = require("puppeteer");
-const { listNotebooks } = require('./services/index');
+const { listNotebooks, createNotebook } = require('./services/index');
 
 const extractDataFromPage = async (page) => {
   await page.waitForSelector(".col-md-4.col-xl-4.col-lg-4");
@@ -47,8 +47,17 @@ const searchAndListDetails = async () => {
     //   console.log('-------------------------');
     // });
 
-    const list = await listNotebooks();
-    console.log("LIST_________", list);
+    // const list = await listNotebooks();
+    // console.log("LIST_________", list);
+
+    const not = {
+      name: "Dell I5 Predator",
+      price: 4000.43,
+      description: "Amazing performance"
+    }
+
+    const notebook = await createNotebook(not);
+    console.log(notebook)
 
     await browser.close();
   } catch (e) {
