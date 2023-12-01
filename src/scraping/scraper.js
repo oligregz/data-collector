@@ -40,13 +40,18 @@ const searchAndListDetails = async () => {
     const extractedData = await extractDataFromPage(page);
     
     const ntbks = await refactNotebookData(extractedData);
-    console.log(ntbks);
+    // console.log(ntbks);
 
     await browser.close();
-
+    return ntbks;
+    
   } catch (e) {
     console.error(e);
   }
 };
 
-searchAndListDetails();
+// searchAndListDetails();
+
+module.exports = {
+  searchAndListDetails
+}
