@@ -12,11 +12,16 @@ const validateBrand = (title) => {
   return true;
 }
 
+const getName = (description) => {
+  const name = description.split(',')[0];
+  return name;
+}
+
 const changePriceForNumber = (stringPrice) => {
   const onlyStringprice = stringPrice.slice(1);
   const numberPrice = parseFloat(onlyStringprice).toFixed(2);
 
-  console.log(`________${numberPrice}________`);
+  return numberPrice;
 }
 
 const refactNotebookData = async (notebooks) => {
@@ -27,8 +32,8 @@ const refactNotebookData = async (notebooks) => {
     .map((data) => {
       changePriceForNumber(data.price)
       return {
-        name: data.title,
-        price: data.price,
+        name: getName(data.description),
+        price: changePriceForNumber(data.price),
         description: data.description,
       };
     });
