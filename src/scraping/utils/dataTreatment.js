@@ -27,7 +27,8 @@ const changePriceForNumber = (stringPrice) => {
 const refactNotebookData = async (notebooks) => {
   const filteredNotebooks = notebooks
     .filter((data) => {
-      return validateBrand(data.title);
+      const isValid = validateBrand(data.description)
+      return isValid;
     })
     .map((data) => {
       changePriceForNumber(data.price)
