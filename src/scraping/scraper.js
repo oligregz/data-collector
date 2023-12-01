@@ -1,5 +1,6 @@
 const puppeteer = require("puppeteer");
-const { listNotebooks, createNotebook } = require('./services/index');
+const { refactNotebookData } = require('./utils/dataTreatment');
+
 
 const extractDataFromPage = async (page) => {
   await page.waitForSelector(".col-md-4.col-xl-4.col-lg-4");
@@ -37,29 +38,12 @@ const searchAndListDetails = async () => {
     await page.setViewport({ width: 1080, height: 1024 });
 
     const extractedData = await extractDataFromPage(page);
-
-    // console.log('Detalhes de cada div:');
-    // extractedData.forEach((data, index) => {
-    //   console.log(`Div ${index + 1}:`);
-    //   console.log('Nome:', data.title);
-    //   console.log('Descrição:', data.description);
-    //   console.log('Preço:', data.price);
-    //   console.log('-------------------------');
-    // });
-
-    // const list = await listNotebooks();
-    // console.log("LIST_________", list);
-
-    const not = {
-      name: "Dell I5 Predator",
-      price: 4000.43,
-      description: "Amazing performance"
-    }
-
-    const notebook = await createNotebook(not);
-    console.log(notebook)
+    
+    const ntbks = await refactNotebookData(extractedData);
+    console.log(ntbks);
 
     await browser.close();
+
   } catch (e) {
     console.error(e);
   }
