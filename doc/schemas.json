@@ -1,0 +1,121 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Data Collector API",
+    "version": "1.0.0",
+    "description": "API for managing notebooks",
+    "contact": {
+      "name": "Your Name",
+      "email": "your@email.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3399",
+      "description": "Localhost server"
+    }
+  ],
+  "paths": {
+    "/api/v1/notebooks": {
+      "post": {
+        "summary": "Create notebook",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NotebookInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "List notebooks",
+        "responses": {
+          "200": {
+            "description": "Success response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotebookListResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1": {
+      "get": {
+        "summary": "Welcome",
+        "responses": {
+          "200": {
+            "description": "Welcome message",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WelcomeMessage"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "NotebookInput": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "required": ["name", "price", "description"]
+      },
+      "SuccessResponse": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "NotebookListResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/NotebookInput"
+        }
+      },
+      "WelcomeMessage": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "example": "Welcome to Data Collector API!"
+          }
+        }
+      }
+    }
+  }
+}
