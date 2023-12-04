@@ -62,7 +62,7 @@ Install dependencies:
 ```
 yarn
 ```
-Create tdatabase:
+Create database:
 
 ```
 yarn create:db
@@ -96,7 +96,7 @@ Resete database data:
 yarn resete:db
 ```
 
-View scraping data in the terminal:
+## View scraping data in the terminal:
 ```
 yarn scrap
 ```
