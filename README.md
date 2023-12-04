@@ -20,6 +20,7 @@ Here we have all of this application's dependencies managed by yarn.
 - Sequelize
 - Mysql2
 - Dotenv
+- Swagger
 
 <br>
 
@@ -42,6 +43,13 @@ For the scraped data to be stored in the database, the API must be running.
 ## 🌐 Flow application
 
 - https://youtu.be/wCUgpSbfjjU
+
+<br>
+
+
+## 📖 Swagger Documentation route
+
+- http://localhost:3399/api/v1/docs
 
 <br>
 
