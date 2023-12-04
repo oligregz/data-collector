@@ -34,9 +34,10 @@ Despite being a simple application, it ends up having several problems that we e
 
 <br>
 
-## 👀 Attention
-The api runs on port 3399.
-For the scraped data to be stored in the database, the API must be running.
+## 👀 Attention 👀
+- Make sure to configure the environment variables for your local database or in a container (like in docker) and change the name of the .example.env file to .env .
+- The api runs on port 3399.
+- For the scraped data to be stored in the database, the API must be running.
 
 <br>
 
