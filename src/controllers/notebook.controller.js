@@ -18,7 +18,7 @@ module.exports = {
 
     } catch (e) {
       console.error(e);
-      return res.staus(400).json({ error: e.parent.sqlMessage });
+      return res.status(400).json({ error: e.parent.sqlMessage });
     }
   },
 

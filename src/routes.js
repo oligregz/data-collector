@@ -4,10 +4,10 @@ const routes = express.Router();
 
 const NotebookController = require('./controllers/notebook.controller');
 
-routes.get('/', (req, res) => {
+routes.get('/api/v1', (req, res) => {
   res.json({ message: 'Wellcome datacollector api!' });
 });
-routes.post('/notebooks', NotebookController.store);
+routes.post('/api/v1/notebooks', NotebookController.store);
 routes.get('/notebooks', NotebookController.index);
 
 

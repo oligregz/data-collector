@@ -8,6 +8,7 @@
     "dev": "nodemon src/server.js",
     "scrap": "nodemon src/scraping/scraper.js",
     "create:db": "yarn sequelize-cli db:create",
+    "migrate:db": "sequelize-cli db:migrate --name 20231128012744-create-notebooks.js",
     "populate:db": "nodemon src/scraping/editDbData/populateDb.js",
     "resete:db": "sequelize-cli db:migrate:undo --name 20231128012744-create-notebooks.js && sequelize-cli db:migrate --name 20231128012744-create-notebooks.js"
   },
