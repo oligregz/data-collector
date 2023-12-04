@@ -10,6 +10,6 @@ const app = express();
 app.use(express.json());
 app.use(routes);
 
-const PORT = process.env.PORT; 
+const PORT = process.env.NODE_LOCAL_PORT; 
 
 app.listen(PORT, () => console.log(`App running on port ${PORT}`));

@@ -40,7 +40,7 @@ const searchAndListDetails = async () => {
     const extractedData = await extractDataFromPage(page);
     
     const ntbks = await refactNotebookData(extractedData);
-    // console.log(ntbks);
+    console.log(ntbks);
 
     await browser.close();
     return ntbks;
@@ -50,7 +50,7 @@ const searchAndListDetails = async () => {
   }
 };
 
-// searchAndListDetails();
+searchAndListDetails();
 
 module.exports = {
   searchAndListDetails

@@ -95,3 +95,8 @@ Resete database data:
 ```
 yarn resete:db
 ```
+
+View scraping data in the terminal:
+```
+yarn scrap
+```
