@@ -10,7 +10,8 @@
     "create:db": "yarn sequelize-cli db:create",
     "migrate:db": "sequelize-cli db:migrate --name 20231128012744-create-notebooks.js",
     "populate:db": "nodemon src/scraping/editDbData/populateDb.js",
-    "resete:db": "sequelize-cli db:migrate:undo --name 20231128012744-create-notebooks.js && sequelize-cli db:migrate --name 20231128012744-create-notebooks.js"
+    "resete:db": "sequelize-cli db:migrate:undo --name 20231128012744-create-notebooks.js && sequelize-cli db:migrate --name 20231128012744-create-notebooks.js",
+    "test:unit": "yarn jest"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +20,7 @@
     "axios": "^1.6.2",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "jest": "^29.7.0",
     "mysql2": "^3.6.5",
     "puppeteer": "^21.5.2",
     "sequelize": "^6.35.1",
