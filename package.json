@@ -11,7 +11,7 @@
     "migrate:db": "sequelize-cli db:migrate --name 20231128012744-create-notebooks.js",
     "populate:db": "nodemon src/scraping/editDbData/populateDb.js",
     "resete:db": "sequelize-cli db:migrate:undo --name 20231128012744-create-notebooks.js && sequelize-cli db:migrate --name 20231128012744-create-notebooks.js",
-    "test:unit": "yarn jest"
+    "test:unit": "jest"
   },
   "keywords": [],
   "author": "",
