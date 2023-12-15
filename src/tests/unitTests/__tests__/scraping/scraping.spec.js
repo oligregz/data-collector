@@ -18,6 +18,7 @@ describe('Scraping tests:', () => {
     expect(firstItem).toHaveProperty('price');
     expect(firstItem).toHaveProperty('description');
   });
+
 });
 
 afterAll(() => {});
