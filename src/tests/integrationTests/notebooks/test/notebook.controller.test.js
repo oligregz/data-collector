@@ -5,6 +5,7 @@ const { Notebook } = require('../../../../models/Notebook');
 const NotebookController = require('../../../../controllers/notebook.controller');
 
 const expect = chai.expect;
+
 chai.use(chaiHttp);
 
 describe('GET /api/v1/notebooks', () => {
@@ -20,7 +21,10 @@ describe('GET /api/v1/notebooks', () => {
 
     sinon.stub(Notebook, 'findAll').resolves(notebooksData);
 
-    const req = { body: {} };
+    const req = {
+      body: {}
+    };
+
     const res = {
       json: sinon.stub(),
       status: sinon.stub().returnsThis()
@@ -35,7 +39,10 @@ describe('GET /api/v1/notebooks', () => {
   it('should handle error if notebooks not found', async () => {
     sinon.stub(Notebook, 'findAll').resolves([]);
 
-    const req = { body: {} };
+    const req = {
+      body: {}
+    };
+  
     const res = {
       json: sinon.stub(),
       status: sinon.stub().returnsThis()
