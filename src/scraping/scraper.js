@@ -1,7 +1,6 @@
 const puppeteer = require("puppeteer");
 const { refactNotebookData } = require('./utils/dataTreatment');
 
-
 const extractDataFromPage = async (page) => {
   await page.waitForSelector(".col-md-4.col-xl-4.col-lg-4");
 
@@ -35,6 +34,7 @@ const searchAndListDetails = async () => {
     await page.goto(
       "https://webscraper.io/test-sites/e-commerce/allinone/computers/laptops"
     );
+
     await page.setViewport({ width: 1080, height: 1024 });
 
     const extractedData = await extractDataFromPage(page);
