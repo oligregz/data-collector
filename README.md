@@ -12,13 +12,17 @@ Here we have all of this application's dependencies managed by yarn.
 
 - Javascript
 - Node.js
-- MySQL
 - Express
 - Puppeter
 - Nodemon
+- MySQL
 - Axios
 - Sequelize
 - Mysql2
+- Jest
+- Mocha
+- Chai
+- Sinon
 - Dotenv
 - Swagger
 
@@ -52,6 +56,19 @@ Despite being a simple application, it ends up having several problems that we e
 
 - http://localhost:3399/api/v1/docs
 
+<br>
+
+## ✅ Tests ❌
+
+Unit tests:
+```
+yarn test:unit
+```
+
+Integration tests:
+```
+yarn test:integration
+```
 <br>
 
 ## 💈 Running API
@@ -109,3 +126,4 @@ yarn resete:db
 ```
 yarn scrap
 ```
+
